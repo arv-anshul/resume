@@ -1,0 +1,83 @@
+{
+  "name": "Anshul Raj Verma",
+  "tagline": "ML Engineer",
+  "email": "arv.anshul.1864@gmail.com",
+  "location": "Bihar, India",
+  "phone": 9999999999,
+  "linkedin": "arv-anshul",
+  "github": "arv-anshul",
+  "website": "arv-anshul.github.io",
+  "technical_skills": {
+    "Frameworks": ["FastAPI", "PyTorch", "Transformers", "Tensorflow", "Keras"],
+    "Languages": ["Python", "JavaScript"],
+    "Developer Tools": ["Git", "GitHub", "Docker", "VS Code", "Bash"],
+    "Libraries": [
+      "Polars",
+      "Pydantic",
+      "LangChain",
+      "Scikit-Learn",
+      "HuggingFace"
+    ]
+  },
+  "educations": [
+    {
+      "from": "DAV Public School",
+      "degree": "10th",
+      "date": 2021,
+      "grade": "90\\%"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "CampusX DSMP",
+      "date": "2023 - 2025",
+      "description": "Machine Learning | MLOps | ETL Pipeline"
+    }
+  ],
+  "experiences": [
+    {
+      "title": "Data Science Intern",
+      "company": "LeapX.ai",
+      "date": "July 2024 - November 2024",
+      "extra": "Remote",
+      "points": [
+        "Build a chat-with-data Chatbot to query data generated from running campaigns on different platforms.",
+        "Developed REST API for Ads Campaigns Dashboard using FastAPI, Meta Ads API and MongoDB.",
+        "Finetune BERT Transformer model for Intent Classification of Search Keywords to choose better keywords for campaigns.",
+        "Build an ETL pipeline to store Ad Campaigns data into MongoDB every hour with different breakdowns.",
+        "Scheduled a Web Scrapper using CRON Job to scrape website weekly basis and store data into database using Scrapy framework."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "YouTube Comment Sentiment",
+      "project_url": "https://github.com/arv-anshul/youtube-comment-sentiment",
+      "subtitle": "Machine Learning, MLOps, Docker, VueJs",
+      "points": [
+        "Trained a ML model to predict the sentiment of youtube comments.",
+        "Used MLFlow, DVC with DagsHub for ML Pipline's experiment tracking.",
+        "Develop REST API to serve the model and fetch data related to youtube videos using FastAPI.",
+        "Build frontend using VueJS and deployed on GitHub pages using GitHub Actions."
+      ]
+    },
+    {
+      "title": "Canvas AI",
+      "project_url": "https://github.com/arv-anshul/canvas-ai",
+      "subtitle": "LLM, Google Gemini, LangChain",
+      "points": [
+        "Evaluate Mathematics or Physics expression by drawing your problem on Canvas.",
+        "Uses Google Gemini Flash to analyse canvas drawing and extract the expression out of it.",
+        "It provides a comprehensive solution to the extracted expression using its multimodal capabilites."
+      ]
+    }
+  ],
+  "course_works": [
+    "LLM with Langchain",
+    "Deep Learning",
+    "Machine Learning",
+    "Web Scrapping",
+    "Modular Coding",
+    "Finetune Transformers"
+  ]
+}
