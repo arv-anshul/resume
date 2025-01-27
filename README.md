@@ -16,10 +16,12 @@ it in PDF format to see the final result and make changes here and there accordi
    ```
 3. Copy the contents of generated `output.tex` and paste it to [Overleaf.com](https://overleaf.com) (or your know
    platform) to render it as PDF and make changes as you want.
-   > \[!CAUTION\]
-   >
-   > Some resume might require extra packages like [resume-02](resume-02/) require both `output.tex` and `altacv.cls` to
-   > build successfully. So you need to copy both the files on the platform (Overleaf.com).
+
+> \[!CAUTION\]
+>
+> Some resume might require extra packages like [resume-02](resume-02/) require both `output.tex` and `altacv.cls` to
+> build successfully. So you need to copy both the files on the platform (Overleaf.com).
+
 4. Download the rendered PDF and you are ready to send it in Job applications.
 
 ## Preview
