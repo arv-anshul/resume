@@ -22,6 +22,12 @@ it in PDF format to see the final result and make changes here and there accordi
    > build successfully. So you need to copy both the files on the platform (Overleaf.com).
 4. Download the rendered PDF and you are ready to send it in Job applications.
 
+## Preview
+
+|               Resume 01                |               Resume 02                |
+| :------------------------------------: | :------------------------------------: |
+| ![resume-01.png](images/resume-01.png) | ![resume-01.png](images/resume-02.png) |
+
 ## Acknowledgements
 
 - I have used a modified version of [@sb2nov](https://github.com/sb2nov/resume)'s resume.
