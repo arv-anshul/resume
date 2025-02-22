@@ -5,7 +5,7 @@ from typing import Any
 
 # Constants for file paths
 CWD = Path(__file__).parent
-PLACEHOLDER_JSON = CWD.parent / "placeholder.json"
+RESUME_JSON = CWD.parent / "resume.json"
 TEMPLATE_FILE = CWD / "template.tex"
 OUTPUT_FILE = CWD / "output.tex"
 
@@ -121,7 +121,7 @@ def fill_template(
 
 if __name__ == "__main__":
     # Load placeholder values
-    placeholders = load_placeholders(PLACEHOLDER_JSON)
+    placeholders = load_placeholders(RESUME_JSON)
 
     # Fill the template and generate the output file
     fill_template(TEMPLATE_FILE, OUTPUT_FILE, placeholders)
