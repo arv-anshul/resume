@@ -1,18 +1,25 @@
 # Resume Generator
 
-Write your details in [`placeholder.json`] and generate your CV using `python` script. _(Isn't it simple)_
+Write your details in [`resume.json`] and generate your CV using `python` script. _(Isn't it simple)_
 
 After generating the final `output.tex` file you can go to platforms like [overleaf.com] to render it in PDF format to
 see the final result and make changes here and there according to your need and download it.
 
 ## Usage
 
-1. Fill [`placeholder.json`] with your details.
-2. There are multiple CV's that you can generate using same `placeholder.json` by just using Python. Just choose one and
-   run below command to generate `output.tex` file in respective directory.
+1. Fill [`resume.json`] with your details.
+2. There are multiple CV's that you can generate using same `resume.json` by just using Python. Just choose one and run
+   below command to generate `output.tex` file in respective directory.
+
    ```bash
-   python run resume-01/generate.py
+   uv run resume-01/generate.py
    ```
+
+   > \[!IMPORTANT\]
+   >
+   > Use [uv](https://astral.sh/uv) to run `generate.py` script because `uv` automatically download the required
+   > dependencies and run the script as expected.
+
 3. Copy the contents of generated `output.tex` and paste it to [overleaf.com] (or your know platform) to render it as
    PDF and make changes as you want.
 
@@ -36,8 +43,8 @@ situations I have encountered which stopped me for doing this:
 
 1. Although, I have successfully completed the `Dockerfile` which render the `output.tex` in `.pdf` format but I
    **couldn't satisfied with its build time and image size** because it is too much.
-2. I realized that even after generating the `output.tex` from [`placeholder.json`]; I highly recommend you to look into
-   its final content on platforms like [overleaf.com] and further edit your Resume/CV according job description and your
+2. I realized that even after generating the `output.tex` from [`resume.json`]; I highly recommend you to look into its
+   final content on platforms like [overleaf.com] and further edit your Resume/CV according job description and your
    expectation.
 
 ## Acknowledgements
@@ -52,5 +59,5 @@ situations I have encountered which stopped me for doing this:
 This project is licensed under the [MIT License](LICENSE).
 
 [@sb2nov]: https://github.com/sb2nov/resume
-[`placeholder.json`]: placeholder.json
+[`resume.json`]: resume.json
 [overleaf.com]: https://overleaf.com
