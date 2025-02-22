@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "title": "Resume",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name of the individual"
+    },
+    "role": {
+      "type": "string",
+      "description": "Professional headline or role"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "location": {
+      "type": "string",
+      "description": "Geographical location"
+    },
+    "phone": {
+      "type": "integer",
+      "description": "Contact phone number"
+    },
+    "linkedin": {
+      "type": "string",
+      "description": "LinkedIn username"
+    },
+    "github": {
+      "type": "string",
+      "description": "GitHub username"
+    },
+    "website": {
+      "type": "string",
+      "description": "Personal website URL (without 'https://')"
+    },
+    "technical_skills": {
+      "type": "object",
+      "description": "Technical skills categorized by type",
+      "properties": {
+        "Developer Tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["Developer Tools"],
+      "additionalProperties": true
+    },
+    "educations": {
+      "type": "array",
+      "description": "Educational background",
+      "items": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "description": "Name of the institution"
+          },
+          "degree": {
+            "type": "string",
+            "description": "Degree or certification obtained"
+          },
+          "date": {
+            "type": "integer",
+            "description": "Year of completion"
+          },
+          "grade": {
+            "type": "string",
+            "description": "Grade or percentage achieved"
+          }
+        },
+        "required": ["from", "degree", "date"],
+        "additionalProperties": false
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "description": "Professional certifications",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the certification"
+          },
+          "date": {
+            "type": "string",
+            "description": "Time period of the certification"
+          },
+          "description": {
+            "type": "string",
+            "description": "Brief description of the certification"
+          }
+        },
+        "required": ["title", "date"],
+        "additionalProperties": false
+      }
+    },
+    "experiences": {
+      "type": "array",
+      "description": "Professional experience",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Job title"
+          },
+          "company": {
+            "type": "string",
+            "description": "Company name"
+          },
+          "date": {
+            "type": "string",
+            "description": "Duration of employment"
+          },
+          "extra": {
+            "type": "string",
+            "description": "Any extra information"
+          },
+          "points": {
+            "type": "array",
+            "description": "A list of brief description of responsibilities and work."
+          }
+        },
+        "required": ["title", "company", "date", "points"],
+        "additionalProperties": false
+      }
+    },
+    "projects": {
+      "type": "array",
+      "description": "Personal projects",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the project"
+          },
+          "subtitle": {
+            "type": "string",
+            "description": "Short description of the project"
+          },
+          "project_url": {
+            "type": "string",
+            "description": "URL for the project"
+          },
+          "points": {
+            "type": "array",
+            "description": "A list of brief description of responsibilities and work."
+          }
+        },
+        "required": ["title", "subtitle", "project_url", "points"],
+        "additionalProperties": false
+      }
+    },
+    "course_works": {
+      "type": "array",
+      "description": "Course works",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "role",
+    "email",
+    "location",
+    "phone",
+    "linkedin",
+    "github",
+    "website",
+    "technical_skills",
+    "educations",
+    "experiences",
+    "projects",
+    "course_works"
+  ]
+}

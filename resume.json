@@ -1,6 +1,7 @@
 {
+  "$schema": "./resume.schema.json",
   "name": "Anshul Raj Verma",
-  "tagline": "ML Engineer",
+  "role": "ML Engineer",
   "email": "arv.anshul.1864@gmail.com",
   "location": "Bihar, India",
   "phone": 9999999999,

@@ -1,11 +1,22 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "jsonschema",
+# ]
+# ///
+
 import json
+import sys
 from pathlib import Path
 from string import Template
 from typing import Any
 
+import jsonschema
+
 # Constants for file paths
 CWD = Path(__file__).parent
 RESUME_JSON = CWD.parent / "resume.json"
+RESUME_SCHEMA_JSON = CWD.parent / "resume.schema.json"
 TEMPLATE_FILE = CWD / "template.tex"
 OUTPUT_FILE = CWD / "output.tex"
 
@@ -119,7 +130,20 @@ def fill_template(
     output_file.write_text(content)
 
 
+def validate_schema(resume_path: Path, schema_path: Path) -> None:
+    """Validate JSON schema. Raises error if invalid and exit the program."""
+    resume_data = json.loads(resume_path.read_bytes())
+    schema = json.loads(schema_path.read_bytes())
+
+    try:
+        jsonschema.validate(instance=resume_data, schema=schema)
+    except jsonschema.ValidationError as e:
+        print("JSON is invalid. Error:", e.message, file=sys.stderr)
+        sys.exit(1)
+
+
 if __name__ == "__main__":
+    validate_schema(RESUME_JSON, RESUME_SCHEMA_JSON)
     # Load placeholder values
     placeholders = load_placeholders(RESUME_JSON)
 
