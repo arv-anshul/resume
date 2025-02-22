@@ -10,9 +10,16 @@ see the final result and make changes here and there according to your need and 
 1. Fill [`resume.json`] with your details.
 2. There are multiple CV's that you can generate using same `resume.json` by just using Python. Just choose one and run
    below command to generate `output.tex` file in respective directory.
+
    ```bash
-   python run resume-01/generate.py
+   uv run resume-01/generate.py
    ```
+
+   > \[!IMPORTANT\]
+   >
+   > Use [uv](https://astral.sh/uv) to run `generate.py` script because `uv` automatically download the required
+   > dependencies and run the script as expected.
+
 3. Copy the contents of generated `output.tex` and paste it to [overleaf.com] (or your know platform) to render it as
    PDF and make changes as you want.
 
