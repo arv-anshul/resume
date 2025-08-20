@@ -1,84 +1,119 @@
 {
-  "$schema": "./resume.schema.json",
-  "name": "Anshul Raj Verma",
-  "role": "ML Engineer",
-  "email": "arv.anshul.1864@gmail.com",
-  "location": "Bihar, India",
-  "phone": 9999999999,
-  "linkedin": "arv-anshul",
-  "github": "arv-anshul",
-  "website": "arv-anshul.github.io",
-  "technical_skills": {
-    "Frameworks": ["FastAPI", "PyTorch", "Transformers", "Tensorflow", "Keras"],
-    "Languages": ["Python", "JavaScript"],
-    "Developer Tools": ["Git", "GitHub", "Docker", "VS Code", "Bash"],
-    "Libraries": [
-      "Polars",
-      "Pydantic",
-      "LangChain",
-      "Scikit-Learn",
-      "HuggingFace"
+  "$schema": "https://github.com/jsonresume/resume-schema/raw/refs/heads/master/schema.json",
+  "basics": {
+    "name": "Anshul Raj Verma",
+    "label": "ML Engineer",
+    "email": "arv.anshul.1864@gmail.com",
+    "url": "https://arv-anshul.github.io",
+    "location": {
+      "address": "Bihar, India"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "arv-anshul",
+        "url": "https://linkedin.com/in/arv-anshul"
+      },
+      {
+        "network": "GitHub",
+        "username": "arv-anshul",
+        "url": "https://github.com/arv-anshul"
+      }
     ]
   },
-  "educations": [
+  "work": [
     {
-      "from": "DAV Public School",
-      "degree": "10th",
-      "date": 2021,
-      "grade": "90\\%"
-    }
-  ],
-  "certifications": [
-    {
-      "title": "CampusX DSMP",
-      "date": "2023 - 2025",
-      "description": "Machine Learning | MLOps | ETL Pipeline"
-    }
-  ],
-  "experiences": [
-    {
-      "title": "Data Science Intern",
-      "company": "LeapX.ai",
-      "date": "July 2024 - November 2024",
-      "extra": "Remote",
-      "points": [
-        "Build a chat-with-data Chatbot to query data generated from running campaigns on different platforms.",
+      "name": "LeapX.ai",
+      "position": "Data Science Intern",
+      "startDate": "2024-07",
+      "endDate": "2024-11",
+      "summary": "Remote",
+      "highlights": [
+        "Built a chat-with-data Chatbot to query data generated from running campaigns on different platforms.",
         "Developed REST API for Ads Campaigns Dashboard using FastAPI, Meta Ads API and MongoDB.",
         "Finetune BERT Transformer model for Intent Classification of Search Keywords to choose better keywords for campaigns.",
-        "Build an ETL pipeline to store Ad Campaigns data into MongoDB every hour with different breakdowns.",
-        "Scheduled a Web Scrapper using CRON Job to scrape website weekly basis and store data into database using Scrapy framework."
+        "Built an ETL pipeline and scheduled with CRON job to store Ad Campaigns data into MongoDB every hour for different breakdowns.",
+        "Scheduled a Web Scraper with CRON job to scrape website on weekly basis and store the data into DB using Scrapy framework."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "DAV Public School",
+      "area": "Secondary Education",
+      "studyType": "10th",
+      "startDate": "2020",
+      "endDate": "2021",
+      "score": "90%"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "CampusX DSMP",
+      "date": "2025",
+      "issuer": "CampusX",
+      "summary": "Machine Learning | MLOps | ETL Pipeline"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frameworks",
+      "keywords": ["FastAPI", "PyTorch", "Transformers", "Tensorflow", "Keras"]
+    },
+    {
+      "name": "Languages",
+      "keywords": ["Python", "JavaScript"]
+    },
+    {
+      "name": "Developer Tools",
+      "keywords": ["Git", "GitHub", "Docker", "VS Code", "Bash"]
+    },
+    {
+      "name": "Libraries",
+      "keywords": [
+        "Polars",
+        "Pydantic",
+        "LangChain",
+        "Scikit-Learn",
+        "HuggingFace"
       ]
     }
   ],
   "projects": [
     {
-      "title": "YouTube Comment Sentiment",
-      "project_url": "https://github.com/arv-anshul/youtube-comment-sentiment",
-      "subtitle": "Machine Learning, MLOps, Docker, VueJs",
-      "points": [
+      "name": "YouTube Comment Sentiment",
+      "url": "https://github.com/arv-anshul/youtube-comment-sentiment",
+      "description": "Machine Learning, MLOps, Docker, VueJs",
+      "highlights": [
         "Trained a ML model to predict the sentiment of youtube comments.",
         "Used MLFlow, DVC with DagsHub for ML Pipline's experiment tracking.",
         "Develop REST API to serve the model and fetch data related to youtube videos using FastAPI.",
-        "Build frontend using VueJS and deployed on GitHub pages using GitHub Actions."
+        "Built frontend using VueJS and deployed on GitHub pages using GitHub Actions."
       ]
     },
     {
-      "title": "Canvas AI",
-      "project_url": "https://github.com/arv-anshul/canvas-ai",
-      "subtitle": "LLM, Google Gemini, LangChain",
-      "points": [
+      "name": "Canvas AI",
+      "url": "https://github.com/arv-anshul/canvas-ai",
+      "description": "LLM, Google Gemini, LangChain",
+      "highlights": [
         "Evaluate Mathematics or Physics expression by drawing your problem on Canvas.",
         "Uses Google Gemini Flash to analyse canvas drawing and extract the expression out of it.",
         "It provides a comprehensive solution to the extracted expression using its multimodal capabilites."
       ]
     }
   ],
-  "course_works": [
-    "LLM with Langchain",
-    "Deep Learning",
-    "Machine Learning",
-    "Web Scrapping",
-    "Modular Coding",
-    "Finetune Transformers"
+  "languages": [
+    {
+      "language": "Hindi",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Professional Speaker"
+    },
+    {
+      "language": "Magahi",
+      "fluency": "Native Speaker"
+    }
   ]
 }
