@@ -2,7 +2,7 @@
   "$schema": "https://github.com/jsonresume/resume-schema/raw/refs/heads/master/schema.json",
   "basics": {
     "name": "Anshul Raj Verma",
-    "label": "ML Engineer",
+    "label": "AI Engineer",
     "email": "arv.anshul.1864@gmail.com",
     "url": "https://arv-anshul.github.io",
     "location": {
@@ -42,9 +42,25 @@
       "institution": "DAV Public School",
       "area": "Secondary Education",
       "studyType": "10th",
-      "startDate": "2020",
-      "endDate": "2021",
+      "startDate": "2021",
+      "endDate": "2022",
       "score": "90%"
+    },
+    {
+      "institution": "Manas Vidyalaya, Jehanabad",
+      "area": "Higher Secondary Education",
+      "studyType": "12th",
+      "startDate": "2024",
+      "endDate": "2025",
+      "score": "58%"
+    },
+    {
+      "institution": "LNCT Excellence, Bhopal, MP",
+      "area": "Under Graduation",
+      "studyType": "B.Tech. (CSE/DS)",
+      "startDate": "2025",
+      "endDate": "2029",
+      "score": ""
     }
   ],
   "certificates": [
@@ -58,15 +74,24 @@
   "skills": [
     {
       "name": "Frameworks",
-      "keywords": ["FastAPI", "PyTorch", "Transformers", "Tensorflow", "Keras"]
+      "keywords": [
+        "FastAPI",
+        "MCP",
+        "LangChain",
+        "PyTorch",
+        "Transformers",
+        "Tensorflow",
+        "Redis",
+        "MySQL"
+      ]
     },
     {
       "name": "Languages",
-      "keywords": ["Python", "JavaScript"]
+      "keywords": ["Python", "HTML", "CSS", "JavaScript"]
     },
     {
       "name": "Developer Tools",
-      "keywords": ["Git", "GitHub", "Docker", "VS Code", "Bash"]
+      "keywords": ["Git", "GitHub", "Docker", "Google Gemini", "OpenAI"]
     },
     {
       "name": "Libraries",
@@ -75,7 +100,8 @@
         "Pydantic",
         "LangChain",
         "Scikit-Learn",
-        "HuggingFace"
+        "HuggingFace",
+        "Scrapy"
       ]
     }
   ],
