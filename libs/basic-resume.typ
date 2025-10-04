@@ -8,6 +8,7 @@
   author-position: left,
   personal-info-position: left,
   pronouns: "",
+  label: "",
   location: "",
   email: "",
   github: "",
@@ -90,6 +91,7 @@
     align(personal-info-position)[
       #{
         let items = (
+          contact-item(label),
           contact-item(pronouns),
           contact-item(phone),
           contact-item(location),
@@ -137,97 +139,5 @@
   start-date: "",
   end-date: "",
 ) = {
-  start-date + " " + $dash.em$ + " " + end-date
-}
-
-// Section components below
-#let edu(
-  institution: "",
-  dates: "",
-  degree: "",
-  gpa: "",
-  location: "",
-  // Makes dates on upper right like rest of components
-  consistent: false,
-) = {
-  if consistent {
-    // edu-constant style (dates top-right, location bottom-right)
-    generic-two-by-two(
-      top-left: strong(institution),
-      top-right: dates,
-      bottom-left: emph(degree),
-      bottom-right: emph(location),
-    )
-  } else {
-    // original edu style (location top-right, dates bottom-right)
-    generic-two-by-two(
-      top-left: strong(institution),
-      top-right: location,
-      bottom-left: emph(degree),
-      bottom-right: emph(dates),
-    )
-  }
-}
-
-#let work(
-  title: "",
-  dates: "",
-  company: "",
-  location: "",
-) = {
-  generic-two-by-two(
-    top-left: strong(title),
-    top-right: dates,
-    bottom-left: company,
-    bottom-right: emph(location),
-  )
-}
-
-#let project(
-  role: "",
-  name: "",
-  url: "",
-  dates: "",
-) = {
-  generic-one-by-two(
-    left: {
-      if role == "" {
-        [*#name* #if url != "" and dates != "" [ (#link("https://" + url)[#url])]]
-      } else {
-        [*#role*, #name #if url != "" and dates != ""  [ (#link("https://" + url)[#url])]]
-      }
-    },
-    right: {
-      if dates == "" and url != "" {
-        link("https://" + url)[#url]
-      } else {
-        dates
-      }
-    },
-  )
-}
-
-#let certificates(
-  name: "",
-  issuer: "",
-  url: "",
-  date: "",
-) = {
-  [
-    *#name*, #issuer
-    #if url != "" {
-      [ (#link("https://" + url)[#url])]
-    }
-    #h(1fr) #date
-  ]
-}
-
-#let extracurriculars(
-  activity: "",
-  dates: "",
-) = {
-  generic-one-by-two(
-    left: strong(activity),
-    right: dates,
-  )
+  [#start-date $dash.en$ #end-date]
 }

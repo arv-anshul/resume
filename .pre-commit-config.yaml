@@ -1,4 +1,13 @@
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-json
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+
   - repo: local
     hooks:
       - id: generate-resume-pdf-basic
@@ -7,10 +16,12 @@ repos:
         args:
           - --root=.
           - --format=pdf
+          - --ignore-system-fonts
+          - --font-path=assets/fonts/
           - templates/basic.typ # input path
           - pdf/basic.pdf # output path
         language: system
-        files: (libs/basic-resume/.*\.typ$|templates/basic\.typ$|resume\.json$)
+        files: (libs/.*\.typ$|templates/basic\.typ$|resume\.json$)
         pass_filenames: false
 
       - id: generate-resume-img-basic
@@ -20,8 +31,39 @@ repos:
           - --root=.
           - --format=png
           - --ppi=300
+          - --ignore-system-fonts
+          - --font-path=assets/fonts/
           - templates/basic.typ # input path
           - images/basic.png # output path
         language: system
-        files: (libs/basic-resume/.*\.typ$|templates/basic\.typ$|resume\.json$)
+        files: (libs/.*\.typ$|templates/basic\.typ$|resume\.json$)
+        pass_filenames: false
+
+      - id: generate-resume-pdf-vantage
+        name: Generate pdf/vantage.pdf
+        entry: typst compile
+        args:
+          - --root=.
+          - --format=pdf
+          - --ignore-system-fonts
+          - --font-path=assets/fonts/
+          - templates/vantage.typ # input path
+          - pdf/vantage.pdf # output path
+        language: system
+        files: (libs/.*\.typ$|templates/vantage\.typ$|resume\.json$)
+        pass_filenames: false
+
+      - id: generate-resume-img-vantage
+        name: Generate images/vantage.png
+        entry: typst compile
+        args:
+          - --root=.
+          - --format=png
+          - --ppi=300
+          - --ignore-system-fonts
+          - --font-path=assets/fonts/
+          - templates/vantage.typ # input path
+          - images/vantage.png # output path
+        language: system
+        files: (libs/.*\.typ$|templates/vantage\.typ$|resume\.json$)
         pass_filenames: false

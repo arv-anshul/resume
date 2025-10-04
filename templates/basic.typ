@@ -1,5 +1,5 @@
-#import "../libs/basic-resume/basic-resume.typ": *
-#import "../libs/basic-resume/utils.typ": strip-url, find-profile
+#import "../libs/basic-resume.typ": *
+#import "../libs/utils.typ": strip-url, find-profile
 
 #let data = json("../resume.json")
 
@@ -17,6 +17,7 @@
   email: data.basics.email,
   font: "New Computer Modern",
   github: strip-url(url: github),
+  label: data.basics.label,
   linkedin: strip-url(url: linkedin),
   location: data.basics.location.address,
   paper: "a4",
@@ -40,12 +41,13 @@
 
 #for w in data.work [
 
-  #work(
-    company: w.position,
-    dates: dates-helper(start-date: w.startDate, end-date: w.at("endDate", default: "Present")),
-    location: w.at("location", default: ""),
-    title: w.name,
+  #generic-two-by-two(
+    top-left: strong(w.name),
+    top-right: dates-helper(start-date: w.startDate, end-date: w.at("endDate", default: "Present")),
+    bottom-left: w.position,
+    bottom-right: emph(w.at("location", default: "")),
   )
+
   #for i in w.highlights [
     - #i
   ]
@@ -55,9 +57,7 @@
 
 #for p in data.projects [
 
-  #project(
-    name: p.name,
-  )
+  #strong(p.name) #h(1fr) #emph(p.description) #sym.dash.en #link(p.url)[Link]
   #for i in p.highlights [
     - #i
   ]
@@ -77,12 +77,21 @@
 
 #for e in data.education [
 
-  #edu(
-    consistent: true,
-    dates: dates-helper(start-date: e.startDate, end-date: e.at("endDate", default: "Present")),
-    degree: [#e.studyType | #e.area],
-    gpa: e.score,
-    institution: e.institution,
-    location: e.at("location", default: ""),
+  #generic-two-by-two(
+    top-left: strong(e.institution),
+    top-right: dates-helper(start-date: e.startDate, end-date: e.at("endDate", default: "Present")),
+    bottom-left: emph([#e.studyType | #e.area]),
+    bottom-right: emph(e.score),
+  )
+]
+
+== Certificates
+
+#for c in data.certificates [
+
+  #generic-two-by-two(
+    top-left: [#strong(c.name), #c.issuer],
+    top-right: c.date,
+    bottom-left: emph(c.summary),
   )
 ]

@@ -73,6 +73,10 @@
   ],
   "skills": [
     {
+      "name": "Languages",
+      "keywords": ["Python", "HTML", "CSS", "JavaScript"]
+    },
+    {
       "name": "Frameworks",
       "keywords": [
         "FastAPI",
@@ -86,14 +90,6 @@
       ]
     },
     {
-      "name": "Languages",
-      "keywords": ["Python", "HTML", "CSS", "JavaScript"]
-    },
-    {
-      "name": "Developer Tools",
-      "keywords": ["Git", "GitHub", "Docker", "Google Gemini", "OpenAI"]
-    },
-    {
       "name": "Libraries",
       "keywords": [
         "Polars",
@@ -103,6 +99,10 @@
         "HuggingFace",
         "Scrapy"
       ]
+    },
+    {
+      "name": "Developer Tools",
+      "keywords": ["Git", "GitHub", "Docker", "Google Gemini", "OpenAI"]
     }
   ],
   "projects": [
