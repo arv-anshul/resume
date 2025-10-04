@@ -3,23 +3,14 @@
 
 #import "@preview/scienceicons:0.1.0": github-icon, linkedin-icon, website-icon, email-icon
 
-#let resume(
+#let setup-resume(
   author: "",
-  author-position: left,
-  personal-info-position: left,
-  pronouns: "",
-  label: "",
-  location: "",
-  email: "",
-  github: "",
-  linkedin: "",
-  phone: "",
-  personal-site: "",
+  h1-position: left,
   accent-color: "#000000",
   font: "New Computer Modern",
   paper: "us-letter",
-  author-font-size: 20pt,
-  font-size: 10pt,
+  h1-font-size: 20pt,
+  base-font-size: 10pt,
   body,
 ) = {
 
@@ -30,7 +21,7 @@
   set text(
     // LaTeX style font
     font: font,
-    size: font-size,
+    size: base-font-size,
     lang: "en",
     // Disable ligatures so ATS systems do not get confused when parsing fonts.
     ligatures: false
@@ -63,17 +54,31 @@
 
   // Name will be aligned left, bold and big
   show heading.where(level: 1): it => [
-    #set align(author-position)
+    #set align(h1-position)
     #set text(
       weight: 700,
-      size: author-font-size,
+      size: h1-font-size,
     )
-    #pad(it.body)
+    #pad(bottom: -5pt, it.body)
   ]
 
-  // Level 1 Heading
-  [= #(author)]
+  // Main body.
+  set par(justify: true)
 
+  body
+}
+
+#let personal-info(
+  accent-color: color.black,
+  email: "",
+  github: "",
+  label: "",
+  linkedin: "",
+  location: "",
+  personal-info-position: left,
+  personal-site: "",
+  phone: "",
+) = {
   // Personal Info Helper
   let contact-item(value, icon: "", link-type: "") = {
     if value != "" {
@@ -90,25 +95,25 @@
     top: 0.25em,
     align(personal-info-position)[
       #{
-        let items = (
+        let info = (
           contact-item(label),
-          contact-item(pronouns),
-          contact-item(phone),
           contact-item(location),
+          contact-item(phone),
+        )
+        info.filter(x => x != none).join(" | ")
+
+        linebreak()
+
+        let links = (
           contact-item(email, icon: email-icon(baseline: 30%, color: accent-color), link-type: "mailto:"),
-          contact-item(github, icon: github-icon(baseline: 20%, color: accent-color), link-type: "https://"),
-          contact-item(linkedin, icon: linkedin-icon(baseline: 20%, color: accent-color), link-type: "https://"),
+          contact-item(github, icon: github-icon(baseline: 20%, color: accent-color), link-type: "https://github.com/"),
+          contact-item(linkedin, icon: linkedin-icon(baseline: 20%, color: accent-color), link-type: "https://linkedin.com/in/"),
           contact-item(personal-site, icon: website-icon(baseline: 25%, color: accent-color), link-type: "https://"),
         )
-        items.filter(x => x != none).join(strong(" | "))
+        links.filter(x => x != none).join(" ")
       }
     ],
   )
-
-  // Main body.
-  set par(justify: true)
-
-  body
 }
 
 // Generic two by two component for resume

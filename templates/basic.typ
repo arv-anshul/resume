@@ -5,25 +5,16 @@
 
 // Extract github and linkedin urls if provided
 #let github-profile = find-profile(data.basics.profiles, network: "github")
-#let github = if github-profile == none { "" } else { github-profile.url }
+#let github = if github-profile == none { "" } else { github-profile.username }
 
 #let linkedin-profile = find-profile(data.basics.profiles, network: "linkedin")
-#let linkedin = if linkedin-profile == none { "" } else { linkedin-profile.url }
+#let linkedin = if linkedin-profile == none { "" } else { linkedin-profile.username }
 
-#show: resume.with(
+#show: setup-resume.with(
   accent-color: color.blue.darken(40%),
-  author-position: center,
   author: data.basics.name,
-  email: data.basics.email,
   font: "New Computer Modern",
-  github: strip-url(url: github),
-  label: data.basics.label,
-  linkedin: strip-url(url: linkedin),
-  location: data.basics.location.address,
   paper: "a4",
-  personal-info-position: center,
-  personal-site: strip-url(url: data.basics.at("url", default: "")),
-  phone: data.basics.at("phone", default: ""),
 )
 
 #set document(
@@ -35,6 +26,22 @@
   ],
   keywords: ("resume", "cv", "curriculum vitae", "professional resume", lower(data.basics.label)),
   title: [Resume of #data.basics.name for #data.basics.label role],
+)
+
+// Name on top of the page
+= #align(center)[#upper(data.basics.name)]
+
+// Personal info below Name
+#personal-info(
+  accent-color: color.black,
+  email: data.basics.email,
+  github: github,
+  label: data.basics.label,
+  linkedin: linkedin,
+  location: data.basics.location.address,
+  personal-info-position: center,
+  personal-site: strip-url(url: data.basics.at("url", default: "")),
+  phone: data.basics.at("phone", default: ""),
 )
 
 == Work Experience
