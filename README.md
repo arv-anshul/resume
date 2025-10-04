@@ -1,63 +1,64 @@
-# Resume Generator
+# Resume Generator - Typst
 
-Write your details in [`resume.json`] and generate your CV using `python` script. _(Isn't it simple)_
-
-After generating the final `output.tex` file you can go to platforms like [overleaf.com] to render it in PDF format to
-see the final result and make changes here and there according to your need and download it.
+A [Typst][typst]-based resume generator that creates professional CVs from a simple [JSON file][resume.json] with a
+single command.
 
 ## Usage
 
-1. Fill [`resume.json`] with your details.
-2. There are multiple CV's that you can generate using same `resume.json` by just using Python. Just choose one and run
-   below command to generate `output.tex` file in respective directory.
+1. Clone the repository.
 
-   ```bash
-   uv run resume-01/generate.py
-   ```
+```bash
+git clone https://github.com/arv-anshul/resume
+```
 
-   > \[!IMPORTANT\]
-   >
-   > Use [uv](https://astral.sh/uv) to run `generate.py` script because `uv` automatically download the required
-   > dependencies and run the script as expected.
+2. Edit and fill [`resume.json`][resume.json] with your details.
+3. Install [Typst][typst] and run `typst` CLI command in your terminal.
 
-3. Copy the contents of generated `output.tex` and paste it to [overleaf.com] (or your know platform) to render it as
-   PDF and make changes as you want.
+```bash
+# Compile `templates/basic.typ` as `pdf/basic.pdf`
+typst compile \
+  --root=. \
+  --format=pdf \
+  --ignore-system-fonts \
+  --font-path=assets/fonts/ \
+  templates/basic.typ \
+  pdf/basic.pdf
+```
 
-> \[!CAUTION\]
->
-> Some resume might require extra packages like [resume-02](resume-02/) require both `output.tex` and `altacv.cls` to
-> build successfully. So you need to copy both the files on the platform ([overleaf.com]).
+```bash
+# Compile `templates/vantage.typ` as `pdf/vantage.pdf`
+typst compile \
+  --root=. \
+  --format=pdf \
+  --ignore-system-fonts \
+  --font-path=assets/fonts/ \
+  templates/vantage.typ \
+  pdf/vantage.pdf
+```
 
-4. Download the rendered PDF and you are ready to send it in Job applications.
+4. Now the compiled PDFs is ready to share in your Job application.
 
 ## Preview
 
-|               Resume 01                |               Resume 02                |
-| :------------------------------------: | :------------------------------------: |
-| ![resume-01.png](images/resume-01.png) | ![resume-01.png](images/resume-02.png) |
+### Basic Resume
 
-## PDF Rendering with Docker
+![basic.png](images/basic.png)
 
-I have first decided to write a `Dockerfile` which render the `output.tex` into `.pdf` format but there are two
-situations I have encountered which stopped me for doing this:
+### Vantage Resume
 
-1. Although, I have successfully completed the `Dockerfile` which render the `output.tex` in `.pdf` format but I
-   **couldn't satisfied with its build time and image size** because it is too much.
-2. I realized that even after generating the `output.tex` from [`resume.json`]; I highly recommend you to look into its
-   final content on platforms like [overleaf.com] and further edit your Resume/CV according job description and your
-   expectation.
+![vantage.png](images/vantage.png)
 
-## Acknowledgements
+## Acknowledgments
 
-- I have used a modified version of [@sb2nov]'s resume.
-- I use [overleaf.com] to render, edit and download the TeX files.
-- Thanks to the LaTeX community for the great tools and resources.
-- Inspired by various LaTeX resume templates.
+- The [Typst][typst] project.
+- Typst templates: [basic-resume](https://typst.app/universe/package/basic-resume),
+  [fantastic-cv](https://typst.app/universe/package/fantastic-cv),
+  [vantage-cv](https://typst.app/universe/package/vantage-cv).
+- [JSON Resume](https://jsonresume.org) project.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
 
-[@sb2nov]: https://github.com/sb2nov/resume
-[`resume.json`]: resume.json
-[overleaf.com]: https://overleaf.com
+[resume.json]: resume.json
+[typst]: https://typst.app
