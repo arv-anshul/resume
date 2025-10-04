@@ -3,14 +3,25 @@ repos:
     hooks:
       - id: generate-resume-pdf-basic
         name: Generate pdf/basic.pdf
-        entry: typst compile --root=. --format=pdf templates/basic.typ pdf/basic.pdf
+        entry: typst compile
+        args:
+          - --root=.
+          - --format=pdf
+          - templates/basic.typ # input path
+          - pdf/basic.pdf # output path
         language: system
         files: (libs/basic-resume/.*\.typ$|templates/basic\.typ$|resume\.json$)
         pass_filenames: false
 
       - id: generate-resume-img-basic
         name: Generate images/basic.png
-        entry: typst compile --root=. --format=png --ppi=300 templates/basic.typ images/basic.png
+        entry: typst compile
+        args:
+          - --root=.
+          - --format=png
+          - --ppi=300
+          - templates/basic.typ # input path
+          - images/basic.png # output path
         language: system
         files: (libs/basic-resume/.*\.typ$|templates/basic\.typ$|resume\.json$)
         pass_filenames: false
