@@ -58,9 +58,9 @@
       "institution": "LNCT Excellence, Bhopal, MP",
       "area": "Under Graduation",
       "studyType": "B.Tech. (CSE/DS)",
-      "startDate": "2025",
-      "endDate": "2029",
-      "score": ""
+      "startDate": "2025-08",
+      "endDate": "2025-12",
+      "score": "Drop Out"
     }
   ],
   "certificates": [
@@ -74,7 +74,7 @@
   "skills": [
     {
       "name": "Languages",
-      "keywords": ["Python", "HTML", "CSS", "JavaScript"]
+      "keywords": ["Python", "HTML", "CSS", "JavaScript", "TypeScript", "Rust"]
     },
     {
       "name": "Frameworks",
@@ -108,11 +108,11 @@
   "projects": [
     {
       "name": "YouTube Comment Sentiment",
-      "url": "https://github.com/arv-anshul/youtube-comment-sentiment",
+      "url": "https://github.com/arv-anshul/yt-comment-sentiment",
       "description": "Machine Learning, MLOps, Docker, VueJs",
       "highlights": [
         "Trained a ML model to predict the sentiment of youtube comments.",
-        "Used MLFlow, DVC with DagsHub for ML Pipline's experiment tracking.",
+        "Used MLFlow, DVC with DagsHub for ML Pipeline experiment tracking.",
         "Develop REST API to serve the model and fetch data related to youtube videos using FastAPI.",
         "Built frontend using VueJS and deployed on GitHub pages using GitHub Actions."
       ]
@@ -123,8 +123,8 @@
       "description": "LLM, Google Gemini, LangChain",
       "highlights": [
         "Evaluate Mathematics or Physics expression by drawing your problem on Canvas.",
-        "Uses Google Gemini Flash to analyse canvas drawing and extract the expression out of it.",
-        "It provides a comprehensive solution to the extracted expression using its multimodal capabilites."
+        "Uses Google Gemini Flash to analyze canvas drawing and extract the expression out of it.",
+        "It provides a comprehensive solution to the extracted expression using its multimodal capabilities."
       ]
     }
   ],
